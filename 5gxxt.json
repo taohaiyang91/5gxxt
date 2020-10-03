@@ -1,0 +1,53 @@
+{
+    "config": {
+        "name": "testcase description",
+        "variables": {}
+    },
+    "teststeps": [
+        {
+            "name": "/xxt5g/weblogin/login",
+            "request": {
+                "url": "http://www.5gxxt.com/xxt5g/weblogin/login",
+                "method": "POST",
+                "headers": {
+                    "session_token": "undefined",
+                    "onlyCode": "undefined",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36",
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                "data": {
+                    "phone": "15210699348",
+                    "pwd": "thy410195885",
+                    "type": "0"
+                }
+            },
+            "validate": [
+                {
+                    "eq": [
+                        "status_code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "headers.Content-Type",
+                        "application/json;charset=UTF-8"
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.msg",
+                        "成功"
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.code",
+                        "200"
+                    ]
+                }
+            ]
+        }
+       
+    ]
+}
